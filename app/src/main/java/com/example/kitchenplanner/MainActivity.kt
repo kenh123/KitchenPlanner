@@ -82,6 +82,24 @@ class MainActivity : AppCompatActivity() {
         cameraExecutor.shutdown()
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode == REQUEST_CODE_PERMISSIONS) {
+            if(allPermissionsGranted()) {
+                startCamera()
+            } else{
+                Toast.makeText(this,
+                "Permissions not granted by the user.",
+                Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
+    }
+
     companion object {
         private const val TAG = "CameraXApp"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
