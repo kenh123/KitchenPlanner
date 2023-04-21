@@ -20,6 +20,9 @@
         android:theme="@style/Theme.KitchenPlanner"
         tools:targetApi="31">
         <activity
+            android:name=".RecipeMakerActivity"
+            android:exported="false" />
+        <activity
             android:name=".InventoryActivity"
             android:exported="false" />
         <activity
