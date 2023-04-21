@@ -20,6 +20,9 @@
         android:theme="@style/Theme.KitchenPlanner"
         tools:targetApi="31">
         <activity
+            android:name=".GroceryListActivity"
+            android:exported="false" />
+        <activity
             android:name=".BarcodeScanning"
             android:exported="false" />
         <activity
